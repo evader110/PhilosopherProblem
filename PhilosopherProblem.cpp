@@ -153,7 +153,7 @@ int main ( int argc, char *argv[] )
         msgOut = doneEating;
         MPI::COMM_WORLD.Send(&msgOut, 1, MPI::INT, forkMaster, tag);//im done eating
       }
-      sleep(p);
+      break;//This implementation has each philosopher only eat once
     }
   }
   delete [] forks;
